@@ -22,9 +22,13 @@
       let mapleader = "\<Space>"
       nmap <leader>c = :wqall<cr>
       nmap <leader>q :Floaterm<cr>
+      nmap <leader>f :FZF<cr>
     '';
 
     plugins = with pkgs.vimPlugins; [
+      # Fuzzy finding.
+      fzfWrapper
+
       # Make stuff look good.
       lualine-nvim
       tokyonight-nvim

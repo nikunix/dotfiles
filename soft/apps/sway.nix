@@ -10,19 +10,10 @@
       (import ../wmConf/screenshot.nix {inherit pkgs;})
 
       # Dynamically rename workspaces.
-      wofi
       workstyle
       
       # For adjusting brightness.
       brightnessctl
-
-      # Screenshot stuff.
-      grim
-      libnotify
-      wl-clipboard
-      slurp
-      swappy
-      jq
     ];
   };
 

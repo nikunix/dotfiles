@@ -1,18 +1,18 @@
-{pkgs}:
+{pkgs, ...}:
 
 pkgs.writeShellScriptBin "screenshot" ''
 case $@ in
   screen)
-    grim - | wl-copy
+    ${pkgs.grim}/bin/grim - | ${pkgs.wl-clipboard}/bin/wl-copy
     ;;
   region)
-    slurp | grim -g - - | wl-copy
+    ${pkgs.slurp}/bin/slurp | ${pkgs.grim}/bin/grim -g - - | ${pkgs.wl-clipboard}/bin/wl-copy
     ;;
   window)
-    swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"' | grim -g - - | wl-copy
+    swaymsg -t get_tree | ${pkgs.jq}/bin/jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"' | ${pkgs.grim}/bin/grim -g - - | ${pkgs.wl-clipboard}/bin/wl-copy
     ;;
 esac
-if [ $(notify-send --action 'default=default' "Edit or save screenshot?") == default ]; then
-  wl-paste | swappy -f -
+if [ $(${pkgs.libnotif}/bin/notify-send --action 'default=default' "Edit or save screenshot?") == default ]; then
+  ${pkgs.wl-clipboard}/bin/wl-paste | swappy -f -
 fi
 ''

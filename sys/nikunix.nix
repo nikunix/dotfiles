@@ -1,14 +1,16 @@
-{...}: # The one I run inside a WM.
+{...}: # The one on my laptop.
 
 {
   networking.hostName = "nikUnix";
 
   imports = [
-    ../soft/nikUnix.nix
+    ../soft/softNikunix.nix
 
     ./usr/nikun.nix
     ./hw/nikunixHW.nix
 
+    ./etc/blue.nix
+    ./etc/time.nix
     ./etc/nix.nix
     ./boot/boot.nix
   ];

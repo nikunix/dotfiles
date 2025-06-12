@@ -20,7 +20,7 @@
 
      /*****----- Global Properties -----*****/
     * {
-         bg:    #${config.col.bgCol};
+         bg:    #${config.col.black2};
          txt:   #${config.col.txtCol};
          pri:   #${config.col.priCol};
          background-color: transparent;

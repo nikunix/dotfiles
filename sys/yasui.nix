@@ -4,14 +4,12 @@
   networking.hostName = "yasui";
 
   imports = [
-    ../soft/apps/base.nix
-    ../soft/apps/code.nix
-    ../soft/apps/font.nix
-    ../soft/apps/sway.nix
+    ../soft/softYasui.nix
 
     ./usr/nikunUsr.nix
     ./hw/yasuiHW.nix
 
+    ./etc/time.nix
     ./etc/nix.nix
     ./boot/boot.nix
   ];
