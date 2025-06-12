@@ -6,7 +6,7 @@
   imports = [
     ../soft/softNikunix.nix
 
-    ./usr/nikun.nix
+    ./usr/nikunUsr.nix
     ./hw/nikunixHW.nix
 
     ./etc/blue.nix

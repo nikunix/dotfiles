@@ -20,6 +20,14 @@
   {
     # System configurations.
     nixosConfigurations = {
+      # My laptop.
+      nikunix = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./sys/nikunix.nix
+          inputs.home-manager.nixosModules.home-manager
+        ];
+      };
       # The old black box.
       yasui = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};

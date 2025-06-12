@@ -1,0 +1,5 @@
+{...}:
+
+{
+  software.steam.enable = true;
+}
